@@ -11,21 +11,19 @@ namespace CorrectnessAlghoritm
             var input = Console.ReadLine();
             var gNumber = int.Parse(input);
 
-            Random random = new Random();
+            
 
-            int tNumber = 1563;
+            int tNumber =246; // The digits of the correct number should be different from each other
 
-            CheckCorrectness(gNumber, tNumber,random);
+            CheckCorrectness(gNumber, tNumber);
         }
 
-        public static void CheckCorrectness(int gNumber, int tNumber,Random rnd)
+        public static void CheckCorrectness(int gNumber, int tNumber)
         {
 
             //Variables
             Dictionary<int, int> numbers = new Dictionary<int, int>();
             Dictionary<int, int> indexDict = new Dictionary<int, int>();
-
-            
             int positivecounter = 0;
             int negativecounter = 0;
 
@@ -58,7 +56,7 @@ namespace CorrectnessAlghoritm
                 }
             }
 
-
+            //Checking the correctness of Guessed Number
             foreach (var item in indexDict)
             {
                 foreach (var number in numbers)
@@ -80,7 +78,7 @@ namespace CorrectnessAlghoritm
 
 
 
-            
+            //Printing Guessed Number with Correcntess
             Console.WriteLine("{0} | + {1} - {2} " , gNumber,positivecounter,negativecounter);
 
         }
